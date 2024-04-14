@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    style="templates_style"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.WorkoutsActivity">
+
+    <TextView
+        android:id="@+id/workouts_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="40dp"
+        android:text="Workouts"
+        android:textColor="@color/black"
+        android:textColorHighlight="#000000"
+        android:textColorLink="#000000"
+        android:textSize="44sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.067"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/quickstart_button"
+        android:layout_width="375dp"
+        android:layout_height="48dp"
+        android:backgroundTint="@color/black"
+        android:text="Quick Start"
+        android:textColorLink="#673AB7"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/workouts_title" />
+
+    <TextView
+        android:id="@+id/templates_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="25dp"
+        android:text="Templates"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.064"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quickstart_button" />
+
+    <TextView
+        android:id="@+id/my_templates_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="25dp"
+        android:text="My Templates"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.063"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/templates_text" />
+
+    <LinearLayout
+        android:id="@+id/my_templates_layout"
+        android:layout_width="376dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/my_templates_text">
+
+        <LinearLayout
+            android:id="@+id/template1_layout"
+            style="@style/templates_style"
+            android:layout_width="160dp"
+            android:layout_height="130dp">
+
+            <TextView
+                android:id="@+id/my_template1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20sp"
+                android:layout_marginTop="15sp"
+                android:text="Template 1"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/description_my_template1"
+                android:layout_width="120dp"
+                android:layout_height="70dp"
+                android:layout_marginLeft="20sp"
+                android:layout_marginTop="10sp"
+                android:text="Description"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/default_templates_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="25dp"
+        android:text="Default Templates"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/my_templates_layout" />
+
+    <LinearLayout
+        android:id="@+id/default_templates_layout"
+        android:layout_width="376dp"
+        android:layout_height="424dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="25dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/default_templates_text">
+
+        <LinearLayout
+            android:id="@+id/default_linear_layout_1"
+            style="@style/horizontal_linear_layouts">
+
+            <LinearLayout
+                android:id="@+id/default_template_1"
+                style="@style/templates_style"
+                android:layout_width="160dp"
+                android:layout_height="130dp"
+                android:background="@drawable/rounded_corners_layout"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/default_template_tittle_1"
+                    style="@style/template_tittle"
+                    android:text="Template1" />
+
+                <TextView
+                    android:id="@+id/default_template_description_1"
+                    style="@style/template_description"
+                    android:text="Description" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/default_template_2"
+                style="@style/templates_style"
+                android:layout_width="160dp"
+                android:layout_height="130dp"
+                android:layout_marginLeft="56.5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/default_template_tittle_2"
+                    style="@style/template_tittle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Template 2" />
+
+                <TextView
+                    android:id="@+id/default_template_description_2"
+                    style="@style/template_description"
+                    android:layout_width="120dp"
+                    android:layout_height="70dp"
+                    android:text="Description" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/default_linear_layout_2"
+            style="@style/horizontal_linear_layouts"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/default_template_3"
+                style="@style/templates_style"
+                android:layout_width="160dp"
+                android:layout_height="130dp"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/default_template_4"
+                style="@style/templates_style"
+                android:layout_width="160dp"
+                android:layout_height="130dp"
+                android:layout_marginLeft="56.5dp"
+                android:orientation="vertical"></LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/default_linear_layout_3"
+            style="@style/horizontal_linear_layouts"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/default_template_5"
+                style="@style/templates_style"
+                android:layout_width="160dp"
+                android:layout_height="130dp"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                style="@style/templates_style"
+                android:layout_width="160dp"
+                android:layout_height="130dp"
+                android:layout_marginLeft="56.5dp"
+                android:orientation="vertical"></LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
