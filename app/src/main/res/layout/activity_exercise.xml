@@ -37,7 +37,7 @@
         android:id="@+id/a_exercises_layouts"
         android:layout_width="match_parent"
         android:layout_height="217dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="60dp"
         android:orientation="vertical"
         app:layout_constraintTop_toBottomOf="@+id/exercise_searchView"
         tools:layout_editor_absoluteX="0dp">
@@ -330,5 +330,41 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btnBiceps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Biceps"
+        app:layout_constraintBottom_toTopOf="@+id/a_exercises_layouts"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/exercise_searchView"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/btnTriceps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Triceps"
+        app:layout_constraintBottom_toTopOf="@+id/a_exercises_layouts"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.387"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/exercise_searchView"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/btnQuadriceps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quadriceps"
+        app:layout_constraintBottom_toTopOf="@+id/a_exercises_layouts"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.806"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/exercise_searchView"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
