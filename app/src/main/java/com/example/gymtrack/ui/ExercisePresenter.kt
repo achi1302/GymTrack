@@ -15,8 +15,8 @@ class ExercisePresenter(
     private val connector = SharedPreferencesConnector.getInstance(context)
     private val dataManager = DataManager(context)
 
-    override fun getExercise() {
-        val observable = dataManager.getExercise()
+    override fun getExercise(muscle:String) {
+        val observable = dataManager.getExercise(muscle)
 
         observable.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
             .subscribe(object : Subscriber<ExerciseResponse>() {
