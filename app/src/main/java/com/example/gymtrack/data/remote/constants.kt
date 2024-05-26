@@ -1,4 +1,6 @@
-package com.example.gymtrack.data
+package com.example.gymtrack.data.remote
+
+
 
 object constants {
 

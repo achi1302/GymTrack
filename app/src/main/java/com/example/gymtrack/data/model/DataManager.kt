@@ -9,8 +9,7 @@ import rx.Observable
 class DataManager (val context: Context){
     private val connector = SharedPreferencesConnector.getInstance(context)
 
-    fun getExercise(muscle: String)  : Observable<ExerciseResponse> {
-
+    fun getExercise(muscle: String)  : Observable<List<Exercise>> {
         return ServiceGenerator.createService(exerciseAPI::class.java,context).getExercise(muscle)
 
     }

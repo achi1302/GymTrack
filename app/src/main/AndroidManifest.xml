@@ -14,19 +14,23 @@
         android:theme="@style/Theme.GymTrack"
         tools:targetApi="31">
         <activity
-            android:name=".ui.WorkoutsActivity"
+            android:name=".ui.Workouts.WorkoutsFragment"
             android:exported="true">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
         </activity>
 
         <activity
-            android:name=".ui.ExerciseActivity"
+            android:name=".ui.Exercises.ExerciseFragment"
             android:exported="true">
+        </activity>
 
+        <activity
+            android:name=".ui.Profile.ProfileFragment"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".ui.StartActivty"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -34,14 +38,19 @@
         </activity>
 
         <activity
-            android:name=".ui.ProfileActivity"
+            android:name=".ui.Login.LoginActivity"
             android:exported="true">
-
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
         </activity>
+
+        <activity
+            android:name=".ui.Signup.SignupActivity"
+            android:exported="true">
+        </activity>
+
+        <activity android:name=".ui.MainActivity"
+            android:exported="true">
+        </activity>
+
     </application>
 
 </manifest>

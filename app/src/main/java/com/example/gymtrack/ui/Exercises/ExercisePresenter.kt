@@ -1,17 +1,18 @@
-package com.example.gymtrack.ui
+package com.example.gymtrack.ui.Exercises
 
 import android.content.Context
 import com.example.gymtrack.data.model.DataManager
-import com.example.gymtrack.data.model.ExerciseResponse
+import com.example.gymtrack.data.model.Exercise
 import com.example.gymtrack.util.SharedPreferencesConnector
 import rx.Subscriber
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
 
 class ExercisePresenter(
-    private val view: ExerciseActivity,
+    private val view: ExerciseContract.View,
     private val context: Context
 ) : ExerciseContract.Presenter {
+
     private val connector = SharedPreferencesConnector.getInstance(context)
     private val dataManager = DataManager(context)
 
@@ -19,21 +20,19 @@ class ExercisePresenter(
         val observable = dataManager.getExercise(muscle)
 
         observable.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
-            .subscribe(object : Subscriber<ExerciseResponse>() {
+            .subscribe(object : Subscriber<List<Exercise>>() {
 
                 override fun onError(e: Throwable?) {
                     e?.printStackTrace()
                 }
 
-                override fun onNext(t: ExerciseResponse) {
-                    view.showExercise(t.main)
+                override fun onNext(t: List<Exercise>) {
+                    view.showExercise(t)
                 }
 
                 override fun onCompleted() {
-                    // no necesario
+                    // not necessary
                 }
             })
     }
-
-
 }
