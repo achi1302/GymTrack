@@ -5,7 +5,7 @@ import android.os.Parcelable
 
 class Exercise( val name: String?,
 //               val type: String?,
-               val muscle: String?,
+//               val muscle: String?,
 //               val equipment: String?,
 //               val difficulty: String?,
                val instructions: String?)
@@ -13,7 +13,7 @@ class Exercise( val name: String?,
     constructor(parcel: Parcel) : this(
         parcel.readString(),
         parcel.readString(),
-        parcel.readString(),
+
 
     ) {
     }
@@ -21,7 +21,7 @@ class Exercise( val name: String?,
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(name)
 //        parcel.writeString(type)
-        parcel.writeString(muscle)
+//        parcel.writeString(muscle)
 //        parcel.writeString(equipment)
 //        parcel.writeString(difficulty)
         parcel.writeString(instructions)
