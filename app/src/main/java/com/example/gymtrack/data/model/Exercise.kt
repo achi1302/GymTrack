@@ -4,28 +4,26 @@ import android.os.Parcel
 import android.os.Parcelable
 
 class Exercise( val name: String?,
-               val type: String?,
+//               val type: String?,
                val muscle: String?,
-               val equipment: String?,
-               val difficulty: String?,
+//               val equipment: String?,
+//               val difficulty: String?,
                val instructions: String?)
         : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString()
+
     ) {
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(name)
-        parcel.writeString(type)
+//        parcel.writeString(type)
         parcel.writeString(muscle)
-        parcel.writeString(equipment)
-        parcel.writeString(difficulty)
+//        parcel.writeString(equipment)
+//        parcel.writeString(difficulty)
         parcel.writeString(instructions)
     }
 
