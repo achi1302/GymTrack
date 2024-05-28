@@ -32,41 +32,131 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/exercises_title"></SearchView>
+        app:layout_constraintTop_toBottomOf="@+id/exercises_title"/>
 
 
-    <Button
-        android:id="@+id/btnBiceps"
+    <HorizontalScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
-        android:backgroundTint="@color/black"
-        android:text="Biceps"
+        android:scrollbars="none"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/exercise_searchView" />
+        app:layout_constraintTop_toBottomOf="@+id/exercise_searchView">
 
-    <Button
-        android:id="@+id/btnTriceps"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="12dp"
-        android:backgroundTint="@color/black"
-        android:text="Triceps"
-        app:layout_constraintStart_toEndOf="@+id/btnBiceps"
-        app:layout_constraintTop_toBottomOf="@+id/exercise_searchView" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/btnQuadriceps"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="12dp"
-        android:backgroundTint="@color/black"
-        android:text="Quadriceps"
-        app:layout_constraintStart_toEndOf="@+id/btnTriceps"
-        app:layout_constraintTop_toBottomOf="@+id/exercise_searchView" />
+            <Button
+                android:id="@+id/btnAbs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/black"
+                android:text="Abdominals" />
+
+            <Button
+                android:id="@+id/btnBiceps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:backgroundTint="@color/black"
+                android:text="Biceps" />
+
+            <Button
+                android:id="@+id/btnCalves"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:backgroundTint="@color/black"
+                android:text="Calves" />
+
+            <Button
+                android:id="@+id/btnChest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:backgroundTint="@color/black"
+                android:text="Chest" />
+
+            <Button
+                android:id="@+id/btnForearms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:backgroundTint="@color/black"
+                android:text="Forearms" />
+
+            <Button
+                android:id="@+id/btnGlutes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:backgroundTint="@color/black"
+                android:text="Glutes" />
+
+            <Button
+                android:id="@+id/btnHamstrings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:backgroundTint="@color/black"
+                android:text="Hamstrings" />
+
+            <Button
+                android:id="@+id/btnLats"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:backgroundTint="@color/black"
+                android:text="Lats" />
+
+            <Button
+                android:id="@+id/btnLowerBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:backgroundTint="@color/black"
+                android:text="Lower Back" />
+
+            <Button
+                android:id="@+id/btnMiddleBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:backgroundTint="@color/black"
+                android:text="Middle Back" />
+
+            <Button
+                android:id="@+id/btnQuads"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:backgroundTint="@color/black"
+                android:text="Quads" />
+
+            <Button
+                android:id="@+id/btnTraps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:backgroundTint="@color/black"
+                android:text="Traps" />
+
+            <Button
+                android:id="@+id/btnTriceps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:backgroundTint="@color/black"
+                android:text="Triceps" />
+
+            <!-- Add more buttons here -->
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
 
 
     <androidx.recyclerview.widget.RecyclerView

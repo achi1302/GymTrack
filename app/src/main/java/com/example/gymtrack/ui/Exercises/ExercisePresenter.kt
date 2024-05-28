@@ -35,4 +35,8 @@ class ExercisePresenter(
                 }
             })
     }
+
+    override fun triggerDialogInfo(exercise: Exercise) {
+        view.showDialogInfo(exercise)
+    }
 }

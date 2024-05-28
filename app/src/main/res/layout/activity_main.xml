@@ -18,7 +18,9 @@
         android:id="@+id/navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#DCDCDC"
+        app:backgroundTint="#DCDCDC"
+        app:itemActiveIndicatorStyle="@style/Theme.Material3.DynamicColors.Dark"
+        app:itemTextAppearanceActive="@style/Theme.Material3.DynamicColors.Light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/menu">
 
