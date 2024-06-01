@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">GymTrack</string>
+    <string name="sets_textview">Sets</string>
+    <string name="sets">sets</string>
+    <string name="weight_textview">lbs</string>
+    <string name="weight">Weight</string>
+    <string name="reps_textview">Reps</string>
+    <string name="reps">reps</string>
+    <string name="exercise_name">Exercise Name</string>
+
+    <string name="template_name">Template Name</string>
+
+
+
+
 </resources>

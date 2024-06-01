@@ -1,6 +1,9 @@
 plugins {
-    alias(libs.plugins.androidApplication)
-    alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("com.android.application")
+    id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
+    id("com.google.gms.google-services")
+    id("com.google.firebase.crashlytics")
 }
 
 android {
@@ -51,6 +54,7 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics:21.6.1")
     implementation("com.google.firebase:firebase-core:21.1.1")
     implementation("com.google.firebase:firebase-messaging:23.4.1")
+    implementation("com.google.firebase:firebase-firestore")
 
     //Firebase SDK for Google Analytics
     implementation("com.google.firebase:firebase-analytics-ktx:21.6.1")

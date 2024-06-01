@@ -9,10 +9,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.example.gymtrack" />
+                  <option name="mobileSdkAppId" value="1:382759775442:android:986fc6805c493fabe0910b" />
+                  <option name="projectId" value="gymtrack-c9ace" />
+                  <option name="projectNumber" value="382759775442" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

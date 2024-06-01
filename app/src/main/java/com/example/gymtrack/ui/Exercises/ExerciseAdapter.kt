@@ -16,7 +16,7 @@ class ExerciseAdapter(private val exerciseList: List<Exercise>) : RecyclerView.A
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExerciseViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.recyclerview_item, parent, false)
+            .inflate(R.layout.exercise_item, parent, false)
         return ExerciseViewHolder(view)
     }
 
@@ -36,7 +36,7 @@ class ExerciseAdapter(private val exerciseList: List<Exercise>) : RecyclerView.A
     }
 
     inner class ExerciseViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val nameTextView: TextView = view.findViewById(R.id.item_name)
+        val nameTextView: TextView = view.findViewById(R.id.exercise_item_name)
 //      val instructionTextView: TextView = view.findViewById(R.id.temp_instruction)
         fun bind(exercise: Exercise?) {
             if (exercise != null) {
