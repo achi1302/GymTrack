@@ -2,7 +2,8 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
-//    id("com.google.gms.google-services")
+    id("com.google.gms.google-services")
+    id("com.google.firebase.crashlytics")
 
 }
 
@@ -45,22 +46,24 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.firebase.firestore)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
     //Firebase
-    implementation(platform("com.google.firebase:firebase-bom:32.8.0"))
-    implementation("com.google.firebase:firebase-analytics:21.6.1")
+    implementation(platform("com.google.firebase:firebase-bom:33.1.0"))
+    implementation("com.google.firebase:firebase-analytics")
+//    implementation("com.google.firebase:firebase-analytics:21.6.1")
     implementation("com.google.firebase:firebase-core:21.1.1")
     implementation("com.google.firebase:firebase-messaging:23.4.1")
-//    implementation("com.google.firebase:firebase-firestore")
 
     //Firebase SDK for Google Analytics
     implementation("com.google.firebase:firebase-analytics-ktx:21.6.1")
 
     //Firebase Crashlytics SDK
-    implementation("com.google.firebase:firebase-crashlytics:18.6.3")
+//    implementation("com.google.firebase:firebase-crashlytics:18.6.3")
+    implementation("com.google.firebase:firebase-crashlytics")
 
 
     /*converter-name tends to any one from listed conververts*/
