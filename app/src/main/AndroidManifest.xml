@@ -53,10 +53,10 @@
             android:exported="true">
         </activity>
 
-<!--        <activity-->
-<!--            android:name=".ui.Workouts.WorkoutStartActivity"-->
-<!--            android:exported="true">-->
-<!--        </activity>-->
+        <activity
+            android:name=".ui.Workouts.WorkoutStartActivity"
+            android:exported="true">
+        </activity>
 
         <activity
             android:name=".ui.Test.TestActivity"
