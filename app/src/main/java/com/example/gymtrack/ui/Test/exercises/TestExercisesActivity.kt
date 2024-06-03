@@ -8,26 +8,28 @@ import com.example.gymtrack.R
 import com.example.gymtrack.data.model.WorkoutExercises
 import com.example.gymtrack.data.model.Workouts
 
-class TestExercisesActivity : AppCompatActivity() {
-
-    private lateinit var exercises: List<WorkoutExercises>
+class TestExercisesActivity: AppCompatActivity(), TestExerciseContract.View {
+    private lateinit var presenter: TestExerciseContract.Presenter
+    private lateinit var exerciseAdapter: TestExerciseAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_test_exercises)
 
-        //Get selected workout from intent
         val selectedWorkout: Workouts = intent.getSerializableExtra("selected_workout") as Workouts
+        presenter = TestExercisePresenter(this, selectedWorkout)
 
-        //Get list of exercises from selected Workout
-        exercises = selectedWorkout.workout_exercises
+        exerciseAdapter = TestExerciseAdapter(selectedWorkout.workout_exercises)
 
-        //Initialize adapter for Recyclerview
-        val exerciseAdapter = TestExerciseAdapter(exercises)
-
-        //Set up the RecyclerView
         val recyclerView = findViewById<RecyclerView>(R.id.test_exercises_rv)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter =  exerciseAdapter
+
+        presenter.onViewCreated()
+
+    }
+
+    override fun displayExercises(exercises: List<WorkoutExercises>) {
+        exerciseAdapter.notifyDataSetChanged()
     }
 }

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -14,55 +15,52 @@ import com.example.gymtrack.ui.Test.exercises.TestExercisesActivity
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.firestore
 
-class TestActivity : AppCompatActivity() {
+class TestActivity : AppCompatActivity(), TestContract.View {
+    private lateinit var presenter: TestContract.Presenter
+    private val workouts = mutableListOf<Workouts>()
+    private lateinit var workoutAdapter: TestAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_test)
 
-        val db = Firebase.firestore
+        // Instantiate your TestAdapter
+        workoutAdapter = TestAdapter(workouts) { selectedWorkout ->
+            presenter.onWorkoutClicked(selectedWorkout)
+        }
+
+        // Set up RecyclerView
+        val recyclerView = findViewById<RecyclerView>(R.id.test_rv)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = workoutAdapter
+
+        presenter = TestPresenter(this)
+        presenter.onViewCreated()
+    }
+
+    override fun displayUserDetails(user: Users) {
         val userName = findViewById<TextView>(R.id.user_name_tv)
         val userLastname = findViewById<TextView>(R.id.user_lastname_tv)
         val usernameTV = findViewById<TextView>(R.id.username_tv)
 
-        val workouts = mutableListOf<Workouts>()
-        val workoutAdapter = TestAdapter(workouts) { selectedWorkout ->
-            // Start TestExercisesActivity with selected workout data
-            val intent = Intent(this, TestExercisesActivity::class.java)
-            // Pass workout data as serializable object
-            intent.putExtra("selected_workout", selectedWorkout)
-            startActivity(intent)
-        }
+        userName.text = user.user_name
+        userLastname.text = user.user_lastname
+        usernameTV.text = user.username
+    }
 
-        val recyclerView = findViewById<RecyclerView>(R.id.test_rv)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = workoutAdapter // Setting adapter using the instance
+    override fun displayWorkouts(fetchedWorkouts: List<Workouts>) {
+        workouts.clear()
+        workouts.addAll(fetchedWorkouts)
+        workoutAdapter.notifyDataSetChanged()
+    }
 
-        val docRef = db.collection("Users").document("FWAzJkVoLpRsApIk3PPY")
-        docRef.get()
-            .addOnSuccessListener { document ->
-                if (document != null) {
-                    val user = document.toObject(Users::class.java)
+    override fun navigateToExercises(workout: Workouts) {
+        val intent = Intent(this, TestExercisesActivity::class.java)
+        intent.putExtra("selected_workout", workout)
+        startActivity(intent)
+    }
 
-                    userName.text = user?.user_name
-                    userLastname.text = user?.user_lastname
-                    usernameTV.text = user?.username
-
-                    for (workoutRef in user?.user_workouts ?: emptyList()) {
-                        workoutRef.get().addOnSuccessListener { workoutDocument ->
-                            val workout = workoutDocument.toObject(Workouts::class.java)?.copy(id = workoutDocument.id)
-                            if (workout != null) {
-                                workouts.add(workout)
-                                workoutAdapter.notifyItemInserted(workouts.size - 1)
-                            }
-                        }
-                    }
-
-                } else {
-                    Log.d("noexists", "No such document")
-                }
-            }
-            .addOnFailureListener { exception ->
-                Log.d("error", "get failed with ", exception)
-            }
+    override fun displayError(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
     }
 }

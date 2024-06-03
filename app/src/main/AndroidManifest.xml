@@ -54,7 +54,7 @@
         </activity>
 
         <activity
-            android:name=".ui.Workouts.WorkoutStartActivity"
+            android:name=".ui.Workouts.start.WorkoutStartActivity"
             android:exported="true">
         </activity>
 

@@ -1,4 +1,4 @@
-package com.example.gymtrack.ui.Workouts
+package com.example.gymtrack.ui.Workouts.start
 
 import android.util.Log
 import com.example.gymtrack.data.model.Users
@@ -7,7 +7,8 @@ import com.example.gymtrack.data.model.Workouts
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.firestore
 
-class WorkoutsStartPresenter(private val view: WorkoutsStartContract.View): WorkoutsStartContract.Presenter {
+class WorkoutsStartPresenter(private val view: WorkoutsStartContract.View):
+    WorkoutsStartContract.Presenter {
     private val db = Firebase.firestore
 
     override fun loadExercises() {
