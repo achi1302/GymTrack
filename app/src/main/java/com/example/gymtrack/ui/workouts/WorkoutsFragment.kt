@@ -2,6 +2,7 @@ package com.example.gymtrack.ui.workouts
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -64,6 +65,7 @@ class WorkoutsFragment : Fragment(), WorkoutsContract.View {
 //    }
 
     override fun navigateToExercises(workout: Workouts) {
+        Log.d("WorkoutsFragment", "Navigating to WorkoutsStart with workout: $workout")
         val intent = Intent(activity, WorkoutsStart::class.java)
             .apply {
                 putExtra("selected_workout", workout as Serializable)

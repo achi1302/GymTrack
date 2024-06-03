@@ -2,6 +2,7 @@ package com.example.gymtrack.ui.workouts.start
 
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.TextView
@@ -45,6 +46,7 @@ class WorkoutsStart: AppCompatActivity(), WorkoutsStartContract.View {
         }
 
         val selectedWorkout: Workouts = intent.getSerializableExtra("selected_workout") as Workouts
+        Log.d("WorkoutsStart", "Received workout: $selectedWorkout")
         presenter = WorkoutsStartPresenter(this, selectedWorkout)
 
         val workoutNameTextView: TextView = findViewById(R.id.workout_name)

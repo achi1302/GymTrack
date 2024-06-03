@@ -17,6 +17,7 @@ class WorkoutsStartAdapter(private val workoutExercises: List<WorkoutExercises>)
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val exercise = workoutExercises[position]
+        holder.exerciseNameTextView.text = exercise.exercise_name
         holder.setsTextView.text = exercise.sets.toString()
         holder.weightTextView.text = exercise.weight.toString()
         holder.repsTextView.text = exercise.reps.toString()
@@ -27,6 +28,7 @@ class WorkoutsStartAdapter(private val workoutExercises: List<WorkoutExercises>)
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val exerciseNameTextView: TextView = itemView.findViewById(R.id.exercise_name)
         val setsTextView: TextView = itemView.findViewById(R.id.sets_textView)
         val weightTextView: TextView = itemView.findViewById(R.id.weight_textView)
         val repsTextView: TextView = itemView.findViewById(R.id.reps_textView)
