@@ -5,12 +5,12 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.os.bundleOf
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gymtrack.R
 import com.example.gymtrack.data.model.Users
 import com.example.gymtrack.data.model.Workouts
+import com.example.gymtrack.ui.Test.exercises.TestExercisesActivity
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.firestore
 

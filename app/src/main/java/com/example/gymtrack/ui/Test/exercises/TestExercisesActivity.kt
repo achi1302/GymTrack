@@ -1,4 +1,4 @@
-package com.example.gymtrack.ui.Test
+package com.example.gymtrack.ui.Test.exercises
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

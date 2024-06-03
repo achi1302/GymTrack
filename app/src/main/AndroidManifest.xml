@@ -64,7 +64,7 @@
         </activity>
 
         <activity
-            android:name=".ui.Test.TestExercisesActivity"
+            android:name=".ui.Test.exercises.TestExercisesActivity"
             android:exported="true">
         </activity>
 
