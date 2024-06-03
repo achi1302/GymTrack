@@ -10,6 +10,9 @@
 
     <string name="workout_name">Workout Name</string>
 
+    <string name="workouts_workout_name">Workout Name</string>
+    <string name="workouts_description">Description</string>
+
 
 
 
