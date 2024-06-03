@@ -65,7 +65,11 @@
 
         <activity
             android:name=".ui.Test.exercises.TestExercisesActivity"
-            android:exported="true">
+            android:parentActivityName=".ui.Test.TestActivity">
+            <!-- Parent activity meta-data to support API level 15+ -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.Test.TestActivity" />
         </activity>
 
 
