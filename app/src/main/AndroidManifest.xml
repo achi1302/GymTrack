@@ -63,6 +63,11 @@
             android:exported="true">
         </activity>
 
+        <activity
+            android:name=".ui.Test.TestExercisesActivity"
+            android:exported="true">
+        </activity>
+
 
 
     </application>

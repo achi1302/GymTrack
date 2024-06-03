@@ -1,16 +1,18 @@
 package com.example.gymtrack.ui.Test
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.os.bundleOf
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.gymtrack.R
 import com.example.gymtrack.data.model.Users
 import com.example.gymtrack.data.model.Workouts
 import com.google.firebase.Firebase
-import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.firestore
-import com.google.firebase.firestore.toObject
 
 class TestActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,46 +22,38 @@ class TestActivity : AppCompatActivity() {
         val db = Firebase.firestore
         val userName = findViewById<TextView>(R.id.user_name_tv)
         val userLastname = findViewById<TextView>(R.id.user_lastname_tv)
-        val username = findViewById<TextView>(R.id.username_tv)
-        val userWorkouts = findViewById<TextView>(R.id.user_workouts_tv)
-        val exerciseSets = findViewById<TextView>(R.id.exercise_sets_tv)
-        val exerciseReps = findViewById<TextView>(R.id.exercise_reps_tv)
-        val exerciseWeight = findViewById<TextView>(R.id.exercise_weight_tv)
+        val usernameTV = findViewById<TextView>(R.id.username_tv)
+
+        val workouts = mutableListOf<Workouts>()
+        val workoutAdapter = TestAdapter(workouts) { selectedWorkout ->
+            // Start TestExercisesActivity with selected workout data
+            val intent = Intent(this, TestExercisesActivity::class.java)
+            // Pass workout data as serializable object
+            intent.putExtra("selected_workout", selectedWorkout)
+            startActivity(intent)
+        }
+
+        val recyclerView = findViewById<RecyclerView>(R.id.test_rv)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = workoutAdapter // Setting adapter using the instance
 
         val docRef = db.collection("Users").document("FWAzJkVoLpRsApIk3PPY")
         docRef.get()
             .addOnSuccessListener { document ->
                 if (document != null) {
-                    Log.d("exists", "DocumentSnapshot data: ${document.data}")
-
                     val user = document.toObject(Users::class.java)
 
                     userName.text = user?.user_name
                     userLastname.text = user?.user_lastname
-                    username.text = user?.username
+                    usernameTV.text = user?.username
 
-                    // Create a list to store workout names
-                    val workoutNames = mutableListOf<String>()
-
-                    // Loop through each reference
                     for (workoutRef in user?.user_workouts ?: emptyList()) {
                         workoutRef.get().addOnSuccessListener { workoutDocument ->
-                            val workout = workoutDocument.toObject(Workouts::class.java)
-                            val workoutName = workout?.workout_name
-                            if (workoutName != null) {
-                                workoutNames.add(workoutName)
+                            val workout = workoutDocument.toObject(Workouts::class.java)?.copy(id = workoutDocument.id)
+                            if (workout != null) {
+                                workouts.add(workout)
+                                workoutAdapter.notifyItemInserted(workouts.size - 1)
                             }
-                            // Loop through each Exercise in the current Workout
-                            for (exercise in workout?.workout_exercises ?: emptyList()) {
-                                // Here, exercise is an object of WorkoutExercise
-                                exerciseSets.text = exercise.sets.toString()
-                                exerciseReps.text = exercise.reps.toString()
-                                exerciseWeight.text = exercise.weight.toString()
-                            }
-                            Log.d("Workouts", workoutNames.toString())
-                            userWorkouts.text = workoutNames.joinToString(separator = "\n") //Convert workout names to string for diplay
-                        }.addOnFailureListener { exception ->
-                            Log.d("Error", "get failed with ", exception)
                         }
                     }
 
@@ -70,6 +64,5 @@ class TestActivity : AppCompatActivity() {
             .addOnFailureListener { exception ->
                 Log.d("error", "get failed with ", exception)
             }
-
     }
 }
