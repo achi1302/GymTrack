@@ -1,4 +1,4 @@
-package com.example.gymtrack.ui.Test
+package com.example.gymtrack.ui.workouts
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,13 +8,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.gymtrack.R
 import com.example.gymtrack.data.model.Workouts
 
-class TestAdapter(
+class WorkoutsAdapter(
     private val workouts: List<Workouts>,
     private val onWorkoutItemClick: (Workouts) -> Unit
-) : RecyclerView.Adapter<TestAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<WorkoutsAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.test_workout_item, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.workouts_item, parent, false)
         return ViewHolder(view)
     }
 
@@ -30,7 +30,7 @@ class TestAdapter(
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val workoutNameTextView: TextView = itemView.findViewById(R.id.test_workout_name)
-        val workoutDescriptionTextView: TextView = itemView.findViewById(R.id.test_workouts_description)
+        val workoutNameTextView: TextView = itemView.findViewById(R.id.workouts_item_workoutname)
+        val workoutDescriptionTextView: TextView = itemView.findViewById(R.id.workouts_item_workoutdescription)
     }
 }

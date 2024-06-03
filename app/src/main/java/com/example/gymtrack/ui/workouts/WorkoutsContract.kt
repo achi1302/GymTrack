@@ -1,14 +1,13 @@
-package com.example.gymtrack.ui.Test
+package com.example.gymtrack.ui.workouts
 
-import com.example.gymtrack.data.model.Users
 import com.example.gymtrack.data.model.Workouts
 
-interface TestContract {
+interface WorkoutsContract {
     interface View {
-        fun displayUserDetails(user: Users)
+//        fun displayUserDetails(user: Users)
         fun displayWorkouts(workouts: List<Workouts>)
         fun navigateToExercises(workout: Workouts)
-        fun displayError(message: String)
+//        fun displayError(message: String)
     }
 
     interface Presenter {

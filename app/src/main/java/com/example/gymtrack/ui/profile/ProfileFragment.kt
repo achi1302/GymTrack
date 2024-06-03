@@ -1,4 +1,4 @@
-package com.example.gymtrack.ui.Profile
+package com.example.gymtrack.ui.profile
 
 import android.os.Bundle
 import android.view.LayoutInflater

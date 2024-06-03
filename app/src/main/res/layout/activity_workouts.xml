@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".ui.Workouts.WorkoutsFragment">
+    tools:context=".ui.workouts.WorkoutsFragment">
 
     <TextView
         android:id="@+id/workouts_title"
@@ -70,13 +70,13 @@
         app:layout_constraintTop_toBottomOf="@+id/templates_text" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/workouts_recycler_view"
+        android:id="@+id/workouts_rv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintTop_toBottomOf="@+id/my_templates_text"
-        tools:layout_editor_absoluteX="16dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/my_templates_text" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

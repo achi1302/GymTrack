@@ -5,8 +5,8 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.gymtrack.R
-import com.example.gymtrack.ui.Login.LoginActivity
-import com.example.gymtrack.ui.Signup.SignupActivity
+import com.example.gymtrack.ui.login.LoginActivity
+import com.example.gymtrack.ui.signup.SignupActivity
 import com.google.firebase.firestore.FirebaseFirestore
 
 class StartActivty : AppCompatActivity() {

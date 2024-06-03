@@ -1,4 +1,4 @@
-package com.example.gymtrack.ui.Signup
+package com.example.gymtrack.ui.signup
 
 import android.content.Intent
 import android.os.Bundle

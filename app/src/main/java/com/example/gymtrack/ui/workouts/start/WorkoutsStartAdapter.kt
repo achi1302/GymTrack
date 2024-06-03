@@ -1,4 +1,4 @@
-package com.example.gymtrack.ui.Test.exercises
+package com.example.gymtrack.ui.workouts.start
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,10 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.gymtrack.R
 import com.example.gymtrack.data.model.WorkoutExercises
 
-class TestExerciseAdapter(private val workoutExercises: List<WorkoutExercises>) : RecyclerView.Adapter<TestExerciseAdapter.ViewHolder>() {
+class WorkoutsStartAdapter(private val workoutExercises: List<WorkoutExercises>) : RecyclerView.Adapter<WorkoutsStartAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.test_workout_exercises_item, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.workout_start_item, parent, false)
         return ViewHolder(view)
     }
 
@@ -27,9 +27,9 @@ class TestExerciseAdapter(private val workoutExercises: List<WorkoutExercises>) 
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val setsTextView: TextView = itemView.findViewById(R.id.test_sets)
-        val weightTextView: TextView = itemView.findViewById(R.id.test_weight)
-        val repsTextView: TextView = itemView.findViewById(R.id.test_reps)
+        val setsTextView: TextView = itemView.findViewById(R.id.sets_textView)
+        val weightTextView: TextView = itemView.findViewById(R.id.weight_textView)
+        val repsTextView: TextView = itemView.findViewById(R.id.reps_textView)
 
     }
 }

@@ -1,19 +1,19 @@
 <resources>
     <string name="app_name">GymTrack</string>
-    <string name="sets_textview">Sets</string>
-    <string name="sets">sets</string>
-    <string name="weight_textview">lbs</string>
-    <string name="weight">Weight</string>
-    <string name="reps_textview">Reps</string>
-    <string name="reps">reps</string>
-    <string name="exercise_name">Exercise Name</string>
-
     <string name="workout_name">Workout Name</string>
 
-    <string name="workouts_workout_name">Workout Name</string>
-    <string name="workouts_description">Description</string>
-
-
+    <!--Workouts Item-->
+    <string name="workouts_item_workoutname">Workout Name</string>
+    <string name="workouts_item_workoutdescription">Description</string>
+    <!--Workouts Exercise Item-->
+    <string name="exercise_name">Exercise Name</string>
+    <string name="sets_tittle">Sets</string>
+    <string name="sets_textview">sets</string>
+    <string name="weight_tittle">lbs</string>
+    <string name="weight_textview">weight</string>
+    <string name="reps_tittle">Reps</string>
+    <string name="reps_textview">reps</string>
+    <string name="ready_tittle">Ready</string>
 
 
 </resources>

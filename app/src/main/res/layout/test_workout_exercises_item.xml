@@ -32,7 +32,7 @@
             android:layout_width="29dp"
             android:layout_height="19dp"
             android:background="@drawable/rounded_corners_textview"
-            android:text="@string/sets"
+            android:text="sets"
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
@@ -67,7 +67,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_corners_textview"
-            android:text="@string/weight"
+            android:text="weight"
             android:textColor="@color/black"
             android:textSize="12sp"
             android:textStyle="bold" />
@@ -99,7 +99,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_corners_textview"
-            android:text="@string/reps"
+            android:text="reps"
             android:textColor="@color/black"
             android:textSize="12sp"
             android:textStyle="bold" />

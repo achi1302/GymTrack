@@ -1,4 +1,4 @@
-package com.example.gymtrack.ui.Exercises
+package com.example.gymtrack.ui.exercises
 
 import com.example.gymtrack.data.model.Exercise
 

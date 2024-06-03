@@ -1,9 +1,9 @@
-package com.example.gymtrack.ui.Test.exercises
+package com.example.gymtrack.ui.workouts.start
 
 import com.example.gymtrack.data.model.WorkoutExercises
 
 
-interface TestExerciseContract {
+interface WorkoutsStartContract {
     interface View {
         fun displayExercises(exercises: List<WorkoutExercises>)
     }

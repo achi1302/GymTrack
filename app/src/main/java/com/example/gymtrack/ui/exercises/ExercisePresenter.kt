@@ -1,4 +1,4 @@
-package com.example.gymtrack.ui.Exercises
+package com.example.gymtrack.ui.exercises
 
 import android.content.Context
 import com.example.gymtrack.data.model.DataManager

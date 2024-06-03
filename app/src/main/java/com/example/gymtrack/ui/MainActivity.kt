@@ -4,10 +4,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.gymtrack.R
-import com.example.gymtrack.ui.Exercises.ExerciseFragment
-import com.example.gymtrack.ui.Profile.ProfileFragment
-import com.example.gymtrack.ui.Test.TestActivity
-import com.example.gymtrack.ui.Workouts.WorkoutsFragment
+import com.example.gymtrack.ui.exercises.ExerciseFragment
+import com.example.gymtrack.ui.profile.ProfileFragment
+import com.example.gymtrack.ui.workouts.WorkoutsFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -34,7 +33,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 R.id.item2 -> {
-                    loadFragment(TestActivity())
+                    loadFragment(WorkoutsFragment())
                     true
                 }
 
