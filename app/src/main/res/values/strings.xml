@@ -19,6 +19,12 @@
     <string name="new_workout_name">Workout Name</string>
     <string name="new_workout_category">Workout Category</string>
     <string name="new_workout_description">Workout Description</string>
+    <string-array name="category_options">
+        <item>Red</item>
+        <item>Blue</item>
+        <item>Green</item>
+        <item>Yellow</item>
+    </string-array>
     <string name="new_exercise_name">Exercise Name</string>
     <string name="new_sets">Sets</string>
     <string name="new_reps">Reps</string>

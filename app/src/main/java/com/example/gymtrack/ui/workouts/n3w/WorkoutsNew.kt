@@ -4,18 +4,20 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.gymtrack.R
 import com.example.gymtrack.data.model.WorkoutExercises
 import com.example.gymtrack.data.model.Workouts
 import com.google.firebase.Firebase
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.firestore
 import java.util.UUID
 
 class WorkoutsNew : AppCompatActivity() {
     private lateinit var workoutNameEditText: EditText
-    private lateinit var categoryEditText: EditText
+    private lateinit var categoryEditText: Spinner
     private lateinit var descriptionEditText: EditText
     private lateinit var exerciseNameEditText: EditText
     private lateinit var setsEditText: EditText
@@ -31,13 +33,13 @@ class WorkoutsNew : AppCompatActivity() {
         setContentView(R.layout.activity_workout_new)
 
         // Get references to views in the layout
-        workoutNameEditText = findViewById(R.id.editTextWorkoutName)
-        exerciseNameEditText = findViewById(R.id.editTextExerciseName)
-        categoryEditText = findViewById(R.id.editTextCategory)
-        descriptionEditText = findViewById(R.id.editTextDescription)
-        setsEditText = findViewById(R.id.editTextSets)
-        repsEditText = findViewById(R.id.editTextReps)
-        weightEditText = findViewById(R.id.editTextWeight)
+        workoutNameEditText = findViewById(R.id.new_WorkoutName)
+        exerciseNameEditText = findViewById(R.id.new_ExerciseName)
+        categoryEditText = findViewById(R.id.new_Category)
+        descriptionEditText = findViewById(R.id.new_Description)
+        setsEditText = findViewById(R.id.new_Sets)
+        repsEditText = findViewById(R.id.new_Reps)
+        weightEditText = findViewById(R.id.new_Weight)
         newExerciseButton = findViewById(R.id.buttonNewExercise)
         submitButton = findViewById(R.id.buttonSubmitWorkout)
 
@@ -74,7 +76,7 @@ class WorkoutsNew : AppCompatActivity() {
         submitButton.setOnClickListener {
             // Get form inputs for the workout
             val workoutName = workoutNameEditText.text.toString()
-            val category = categoryEditText.text.toString()
+            val category = categoryEditText.selectedItem.toString()
             val description = descriptionEditText.text.toString()
 
             // Generate unique id for the workout
@@ -84,20 +86,32 @@ class WorkoutsNew : AppCompatActivity() {
             val workout = Workouts(
                 workoutId,
                 workoutName,
-                category, // you might want to handle workout category separately
-                description, // you might want to handle workout description separately
+                category,
+                description,
                 workoutExercisesList // This will include all the exercises added by user
             )
 
             val workoutsCollection = db.collection("Workouts")
-            // Create a new document in 'Workouts' collection
-            val documentReference = workoutsCollection.document(workoutId)
+            val documentReference = workoutsCollection.document(workoutId)  // Create a new document in 'Workouts' collection
 
             // Write workout to Firestore
-            db.collection("Workouts").document(workoutId)
+            documentReference
                 .set(workout)
                 .addOnSuccessListener {
                     Log.d("CreateWorkoutActivity", "Workout successfully written to Firestore!")
+
+                    // Path of the user document (modify it as per your data model)
+                    val userDocumentPath = "Users/FWAzJkVoLpRsApIk3PPY"
+                    val userDocumentReference = db.document(userDocumentPath)
+
+                    // Update user document: add workout document reference to the user_workouts list
+                    userDocumentReference.update("user_workouts", FieldValue.arrayUnion(documentReference))
+                        .addOnSuccessListener {
+                            Log.d("CreateWorkoutActivity", "Workout Reference successfully added to the User!")
+                        }
+                        .addOnFailureListener { e ->
+                            Log.d("CreateWorkoutActivity", "Error adding Workout Reference to the User", e)
+                        }
 
                     // Clear all fields and list after successful submission
                     workoutNameEditText.setText("")
