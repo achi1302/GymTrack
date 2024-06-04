@@ -64,6 +64,13 @@
                 android:value=".ui.workouts.WorkoutsFragment" />
         </activity>
 
+        <activity
+            android:name=".ui.workouts.n3w.WorkoutsNew"
+            android:exported="true">
+        </activity>
+
+
+
 
 
     </application>

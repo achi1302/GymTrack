@@ -15,5 +15,16 @@
     <string name="reps_textview">reps</string>
     <string name="ready_tittle">Ready</string>
 
+    <!--Workout New -->
+    <string name="new_workout_name">Workout Name</string>
+    <string name="new_workout_category">Workout Category</string>
+    <string name="new_workout_description">Workout Description</string>
+    <string name="new_exercise_name">Exercise Name</string>
+    <string name="new_sets">Sets</string>
+    <string name="new_reps">Reps</string>
+    <string name="new_weight">Weight</string>
+    <string name="new_exercise">Add Exercise</string>
+    <string name="new_submit">Submit</string>
+
 
 </resources>
