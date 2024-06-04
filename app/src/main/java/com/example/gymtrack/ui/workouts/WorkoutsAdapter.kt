@@ -22,6 +22,7 @@ class WorkoutsAdapter(
         val workout = workouts[position]
         holder.workoutNameTextView.text = workout.workout_name
         holder.workoutDescriptionTextView.text = workout.workout_description
+        holder.workoutCategoryTextView.text = workout.workout_category
         holder.itemView.setOnClickListener { onWorkoutItemClick(workout) }
     }
 
@@ -32,5 +33,6 @@ class WorkoutsAdapter(
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val workoutNameTextView: TextView = itemView.findViewById(R.id.workouts_item_workoutname)
         val workoutDescriptionTextView: TextView = itemView.findViewById(R.id.workouts_item_workoutdescription)
+        val workoutCategoryTextView: TextView = itemView.findViewById(R.id.workouts_item_workoutcategory)
     }
 }

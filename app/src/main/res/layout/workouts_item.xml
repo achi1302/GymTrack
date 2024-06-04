@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="480px"
-    android:layout_height="420px">
+    android:layout_height="470px">
 
     <LinearLayout
         android:id="@+id/workouts_ll"
         style="@style/templates_style"
         android:layout_width="160dp"
-        android:layout_height="130dp"
+        android:layout_height="155dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,6 +26,16 @@
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/workouts_item_workoutcategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10sp"
+            android:text="@string/Category"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/workouts_item_workoutdescription"

@@ -8,6 +8,7 @@
     <string name="new_workout">New Workout</string>
     <string name="workout_description">Workout Description</string>
     <string name="Description">Description</string>
+    <string name="Category">Category</string>
 
     <string name="exercise_name">Exercise Name</string>
     <string name="Sets">Sets</string>
