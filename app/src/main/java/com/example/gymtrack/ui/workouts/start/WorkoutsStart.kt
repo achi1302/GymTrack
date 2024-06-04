@@ -1,9 +1,11 @@
 package com.example.gymtrack.ui.workouts.start
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
 import android.view.MenuItem
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -47,6 +49,21 @@ class WorkoutsStart: AppCompatActivity(), WorkoutsStartContract.View {
 
         val selectedWorkout: Workouts = intent.getSerializableExtra("selected_workout") as Workouts
         Log.d("WorkoutsStart", "Received workout: $selectedWorkout")
+
+        //The complete and flawless magic
+        if (selectedWorkout.workout_exercises.any { it.reps >= 10 }) {
+            val inflater = this.layoutInflater
+            val dialogView: View = inflater.inflate(R.layout.workout_start_alert, null)
+
+            val alertDialog = AlertDialog.Builder(this).setView(dialogView).create()
+
+            dialogView.findViewById<Button>(R.id.button_ok).setOnClickListener {
+                alertDialog.dismiss()
+            }
+
+            alertDialog.show()
+        }
+
         presenter = WorkoutsStartPresenter(this, selectedWorkout)
 
         val workoutNameTextView: TextView = findViewById(R.id.workout_name)

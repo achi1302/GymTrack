@@ -1,36 +1,39 @@
 <resources>
     <string name="app_name">GymTrack</string>
+    <string name="Name">Name</string>
+    <string name="workouts">Workouts</string>
     <string name="workout_name">Workout Name</string>
+    <string name="workout_category">Workout Category</string>
+    <string name="my_workouts">My Workouts</string>
+    <string name="new_workout">New Workout</string>
+    <string name="workout_description">Workout Description</string>
+    <string name="Description">Description</string>
 
-    <!--Workouts Item-->
-    <string name="workouts_item_workoutname">Workout Name</string>
-    <string name="workouts_item_workoutdescription">Description</string>
-    <!--Workouts Exercise Item-->
     <string name="exercise_name">Exercise Name</string>
-    <string name="sets_tittle">Sets</string>
-    <string name="sets_textview">sets</string>
-    <string name="weight_tittle">lbs</string>
-    <string name="weight_textview">weight</string>
-    <string name="reps_tittle">Reps</string>
-    <string name="reps_textview">reps</string>
-    <string name="ready_tittle">Ready</string>
+    <string name="Sets">Sets</string>
+    <string name="sets">sets</string>
+    <string name="Weight">lbs</string>
+    <string name="weight">weigh</string>
+    <string name="Reps">Reps</string>
+    <string name="reps">reps</string>
 
-    <!--Workout New -->
-    <string name="new_workout_name">Workout Name</string>
-    <string name="new_workout_category">Workout Category</string>
-    <string name="new_workout_description">Workout Description</string>
+    <string name="alert_tittle">Challenge Yourself!</string>
+    <string name="alert_mssg">We noticed that one of the workouts has 10 or more reps. We recommend incrementing the weight and lowering the amount of reps. You are doing great! Work Smarter not Harder.</string>
+
+    <string name="button_add">Add</string>
+    <string name="button_ok">OK</string>
+    <string name="button_save">Save</string>
+    <string name="button_finish">Finish</string>
+    <string name="button_quick_start">Quick Start</string>
+    <string name="button_new_exercise">New Exercise</string>
+
+    <string name="Ready">Ready</string>
+
     <string-array name="category_options">
-        <item>Red</item>
-        <item>Blue</item>
-        <item>Green</item>
-        <item>Yellow</item>
+        <item>Hard</item>
+        <item>Medium</item>
+        <item>Easy</item>
     </string-array>
-    <string name="new_exercise_name">Exercise Name</string>
-    <string name="new_sets">Sets</string>
-    <string name="new_reps">Reps</string>
-    <string name="new_weight">Weight</string>
-    <string name="new_exercise">Add Exercise</string>
-    <string name="new_submit">Submit</string>
 
 
 </resources>

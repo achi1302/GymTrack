@@ -6,11 +6,13 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gymtrack.R
 import com.example.gymtrack.data.model.Workouts
+import com.example.gymtrack.ui.workouts.n3w.WorkoutsNew
 import com.example.gymtrack.ui.workouts.start.WorkoutsStart
 import java.io.Serializable
 
@@ -37,8 +39,15 @@ class WorkoutsFragment : Fragment(), WorkoutsContract.View {
 
         // Set up RecyclerView
         val recyclerView = view.findViewById<RecyclerView>(R.id.workouts_rv)
-        recyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        recyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         recyclerView.adapter = workoutAdapter
+
+        //Button that leads to WorkoutsNew
+        val addButton = view.findViewById<Button>(R.id.workouts_add_button)
+        addButton.setOnClickListener {
+            val intent = Intent(activity, WorkoutsNew::class.java)
+            startActivity(intent)
+        }
 
         presenter = WorkoutsPresenter(this)
         presenter.onViewCreated()

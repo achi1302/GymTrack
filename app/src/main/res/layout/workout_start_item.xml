@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="90dp">
+    android:layout_height="150dp">
 
 
     <LinearLayout
         android:id="@+id/sets_layout"
-        android:layout_width="32dp"
-        android:layout_height="42dp"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="10dp"
         android:gravity="center"
@@ -22,9 +22,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
-            android:text="@string/sets_tittle"
+            android:text="@string/Sets"
             android:textColor="@color/black"
-            android:textSize="12sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <LinearLayout
@@ -38,9 +38,10 @@
             <TextView
                 android:id="@+id/sets_textView"
                 android:layout_width="wrap_content"
-                android:layout_height="19dp"
-                android:text="@string/sets_textview"
+                android:layout_height="wrap_content"
+                android:text="@string/sets"
                 android:textColor="@color/black"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -52,8 +53,8 @@
 
     <LinearLayout
         android:id="@+id/weight_layout"
-        android:layout_width="49dp"
-        android:layout_height="42dp"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="45dp"
         android:gravity="center"
         android:orientation="vertical"
@@ -66,9 +67,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
-            android:text="@string/weight_tittle"
+            android:text="@string/Weight"
             android:textColor="@color/black"
-            android:textSize="12sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <LinearLayout
@@ -82,9 +83,10 @@
             <TextView
                 android:id="@+id/weight_textView"
                 android:layout_width="wrap_content"
-                android:layout_height="19dp"
-                android:text="@string/weight_textview"
+                android:layout_height="wrap_content"
+                android:text="@string/weight"
                 android:textColor="@color/black"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -95,8 +97,8 @@
 
     <LinearLayout
         android:id="@+id/reps_layout"
-        android:layout_width="49dp"
-        android:layout_height="42dp"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="45dp"
         android:gravity="center"
         android:orientation="vertical"
@@ -109,9 +111,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
-            android:text="@string/reps_tittle"
+            android:text="@string/Reps"
             android:textColor="@color/black"
-            android:textSize="12sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <LinearLayout
@@ -125,9 +127,10 @@
             <TextView
                 android:id="@+id/reps_textView"
                 android:layout_width="wrap_content"
-                android:layout_height="19dp"
-                android:text="@string/reps_textview"
+                android:layout_height="wrap_content"
+                android:text="@string/reps"
                 android:textColor="@color/black"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -138,8 +141,8 @@
 
     <LinearLayout
         android:layout_width="50dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="85dp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="@+id/reps_layout"
@@ -151,16 +154,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
-            android:text="@string/ready_tittle"
+            android:text="@string/Ready"
             android:textColor="@color/black"
-            android:textSize="12sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <CheckBox
             android:id="@+id/checkBox_finished"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:buttonTint="#47EC38"
+            android:layout_width="wrap_content"
+            android:layout_height="21dp"
+            android:buttonTint="@color/green"
             android:checked="false"
             app:buttonIconTint="@color/white" />
     </LinearLayout>
@@ -173,7 +176,7 @@
         android:layout_marginTop="5dp"
         android:text="@string/exercise_name"
         android:textColor="@color/black"
-        android:textSize="14sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

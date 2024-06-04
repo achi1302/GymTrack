@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_marginTop="40dp"
-        android:text="Workouts"
+        android:text="@string/workouts"
         android:textColor="@color/black"
         android:textColorHighlight="#000000"
         android:textColorLink="#000000"
@@ -31,7 +31,7 @@
         android:layout_width="375dp"
         android:layout_height="48dp"
         android:backgroundTint="@color/black"
-        android:text="Quick Start"
+        android:text="@string/button_quick_start"
         android:textColorLink="#673AB7"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -40,43 +40,39 @@
         app:layout_constraintTop_toBottomOf="@+id/workouts_title" />
 
     <TextView
-        android:id="@+id/templates_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="25dp"
-        android:text="Templates"
-        android:textColor="@color/black"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.064"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quickstart_button" />
-
-    <TextView
         android:id="@+id/my_templates_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_marginTop="25dp"
-        android:text="My Templates"
+        android:text="@string/my_workouts"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.063"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/templates_text" />
+        app:layout_constraintTop_toBottomOf="@+id/quickstart_button" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/workouts_rv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/my_templates_text" />
+
+    <Button
+        android:id="@+id/workouts_add_button"
+        android:layout_width="74dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="20dp"
+        android:backgroundTint="@color/black"
+        android:text="@string/button_add"
+        app:layout_constraintBottom_toBottomOf="@+id/my_templates_text"
+        app:layout_constraintStart_toEndOf="@+id/my_templates_text"
+        app:layout_constraintTop_toTopOf="@+id/my_templates_text" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

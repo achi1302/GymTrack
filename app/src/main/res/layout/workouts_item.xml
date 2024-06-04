@@ -19,23 +19,23 @@
             android:id="@+id/workouts_item_workoutname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20sp"
+            android:layout_marginLeft="10sp"
             android:layout_marginTop="15sp"
-            android:text="@string/workouts_item_workoutname"
+            android:text="@string/workout_name"
             android:textAlignment="textStart"
             android:textColor="@color/black"
-            android:textSize="14sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/workouts_item_workoutdescription"
             android:layout_width="120dp"
             android:layout_height="70dp"
-            android:layout_marginLeft="20sp"
+            android:layout_marginLeft="10sp"
             android:layout_marginTop="10sp"
-            android:text="@string/workouts_item_workoutdescription"
+            android:text="@string/Description"
             android:textColor="@color/black"
-            android:textSize="12sp" />
+            android:textSize="18sp" />
     </LinearLayout>
 
 
